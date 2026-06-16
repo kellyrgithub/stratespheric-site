@@ -575,14 +575,15 @@
   <section id="enterprise-contact">
     <div class="container" style="text-align: center;">
       <h2 class="section-title" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;">Tell us about your growth goals</h2>
-      <div class="contact-form" style="text-align: left;">
+      <form class="contact-form" style="text-align: left;" name="enterprise-contact" netlify data-netlify="true">
+        <input type="hidden" name="form-name" value="enterprise-contact" />
         <div class="form-row">
-          <div class="form-field"><label>Name</label><input type="text" placeholder="Your name" /></div>
-          <div class="form-field"><label>Email</label><input type="email" placeholder="you@company.com" /></div>
+          <div class="form-field"><label>Name</label><input type="text" name="name" placeholder="Your name" /></div>
+          <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="you@company.com" /></div>
         </div>
-        <div class="form-field"><label>Tell us about your challenge</label><textarea placeholder="What are you working on?"></textarea></div>
-        <button class="btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
-      </div>
+        <div class="form-field"><label>Tell us about your challenge</label><textarea name="message" placeholder="What are you working on?"></textarea></div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+      </form>
     </div>
   </section>
 
@@ -722,14 +723,15 @@
     <div class="container" style="text-align: center;">
       <h2 class="section-title" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;">Grab a free strategy session</h2>
       <p class="section-subtitle" style="margin: 0 auto 0.5rem;">Tell us a bit about your growth goals.</p>
-      <div class="contact-form" style="text-align: left;">
+      <form class="contact-form" style="text-align: left;" name="startup-contact" netlify data-netlify="true">
+        <input type="hidden" name="form-name" value="startup-contact" />
         <div class="form-row">
-          <div class="form-field"><label>Name</label><input type="text" placeholder="Your name" /></div>
-          <div class="form-field"><label>Email</label><input type="email" placeholder="you@startup.com" /></div>
+          <div class="form-field"><label>Name</label><input type="text" name="name" placeholder="Your name" /></div>
+          <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="you@startup.com" /></div>
         </div>
-        <div class="form-field"><label>What are you working on?</label><textarea placeholder="Tell us about your stage and challenge..."></textarea></div>
-        <button class="btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
-      </div>
+        <div class="form-field"><label>What are you working on?</label><textarea name="message" placeholder="Tell us about your stage and challenge..."></textarea></div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+      </form>
     </div>
   </section>
 
@@ -852,14 +854,15 @@
       <a href="https://www.linkedin.com/company/stratespheric" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--teal-dark); font-weight: 600; text-decoration: none; margin-bottom: 2rem; font-size: 0.9rem;">
         🔗 Connect on LinkedIn
       </a>
-      <div class="contact-form" style="text-align: left;">
+      <form class="contact-form" style="text-align: left;" name="about-contact" netlify data-netlify="true">
+        <input type="hidden" name="form-name" value="about-contact" />
         <div class="form-row">
-          <div class="form-field"><label>Name</label><input type="text" placeholder="Your name" /></div>
-          <div class="form-field"><label>Email</label><input type="email" placeholder="you@company.com" /></div>
+          <div class="form-field"><label>Name</label><input type="text" name="name" placeholder="Your name" /></div>
+          <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="you@company.com" /></div>
         </div>
-        <div class="form-field"><label>Message</label><textarea placeholder="Tell us what you're working on..."></textarea></div>
-        <button class="btn-primary" style="width: 100%; justify-content: center;">Schedule Free Consultation</button>
-      </div>
+        <div class="form-field"><label>Message</label><textarea name="message" placeholder="Tell us what you're working on..."></textarea></div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Schedule Free Consultation</button>
+      </form>
     </div>
   </section>
 
@@ -958,6 +961,16 @@
   </footer>
 </div>
 
+<!-- Form Success Popup -->
+<div id="form-success-popup" style="display:none; position:fixed; inset:0; background:rgba(13,31,45,0.6); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:16px; padding:2.5rem 2rem; max-width:400px; width:90%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.2);">
+    <div style="font-size:2rem; margin-bottom:1rem;">✓</div>
+    <h3 style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:300; font-size:1.4rem; color:#0d1f2d; margin:0 0 0.75rem;">Your inquiry was submitted</h3>
+    <p style="color:#64748b; font-size:0.95rem; margin:0 0 1.5rem;">We'll be back with you soon.</p>
+    <button id="form-success-close" class="btn-primary" style="justify-content:center;">Close</button>
+  </div>
+</div>
+
 <script>
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -990,6 +1003,23 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       noResults.style.display = visible === 0 ? 'block' : 'none';
     });
+  });
+
+  // Netlify Forms — intercept submit, post via fetch, show success popup
+  document.querySelectorAll('form[netlify]').forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new URLSearchParams(new FormData(form));
+      try {
+        await fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: data.toString() });
+      } catch(err) { /* fail silently — still show confirmation */ }
+      form.reset();
+      document.getElementById('form-success-popup').style.display = 'flex';
+    });
+  });
+
+  document.getElementById('form-success-close').addEventListener('click', function() {
+    document.getElementById('form-success-popup').style.display = 'none';
   });
 
   // Restore filter state from blog post back-navigation
