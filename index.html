@@ -194,7 +194,7 @@
   /* TESTIMONIALS */
   .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
   .testimonial {
-    background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+    background: #e8f7fc; border: 1px solid rgba(91,195,227,0.3); border-radius: 14px;
     padding: 1.75rem; position: relative;
   }
   .testimonial::before { content: '\201C'; font-family: 'Syne', sans-serif; font-size: 4rem; color: var(--teal); line-height: 0; position: absolute; top: 1.5rem; right: 1.5rem; opacity: 0.35; }
@@ -224,6 +224,14 @@
     overflow: hidden; transition: all 0.2s; cursor: pointer;
   }
   .blog-card:hover { border-color: var(--teal); box-shadow: 0 8px 30px rgba(91,195,227,0.15); transform: translateY(-2px); }
+  .filter-btn {
+    background: none; border: 1px solid var(--border); border-radius: 100px;
+    font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600;
+    color: var(--muted); padding: 0.3rem 0.9rem; cursor: pointer;
+    transition: all 0.15s; letter-spacing: 0.03em;
+  }
+  .filter-btn:hover { border-color: var(--teal); color: var(--teal-dark); }
+  .filter-btn.active { background: var(--teal-light); border-color: var(--teal); color: var(--teal-dark); }
   .blog-card-img {
     height: 160px;
     background: linear-gradient(135deg, var(--navy), var(--navy-mid));
@@ -867,32 +875,81 @@
     <div class="container">
       <div class="section-label">Insights</div>
       <h1 class="section-title" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;">The Stratespheric Blog</h1>
-      <p class="section-subtitle">Strategy, growth, and leadership thinking for operators building in complex markets.</p>
+      <p class="section-subtitle">Strategy, growth and leadership thinking for operators building in complex markets.</p>
     </div>
   </section>
 
   <section class="bg-alt" style="padding-top: 2rem;">
     <div class="container">
-      <div class="blog-grid">
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · AI Strategy</div><h3>What AI Is Making More Valuable</h3><p>Headlines everywhere focus on what AI will replace.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · Healthcare</div><h3>Healthcare Is Moving From Authority to Navigation</h3><p>The defining healthcare trend of the moment isn't AI.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · Operations</div><h3>When Measurement Becomes Decision Infrastructure</h3><p>Measurement used to be the finish line.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · Leadership</div><h3>The Organizational Cost of Velocity</h3><p>In high-growth environments, velocity can outpace alignment.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · AI &amp; Leadership</div><h3>What Your AI Strategy Says About Your Leadership</h3><p>How AI systems expose what leaders actually believe about their people.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · AI</div><h3>The Orchestration Layer That Comes Before AI Agents</h3><p>The foundational challenge many teams overlook.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · Growth</div><h3>What You Learn to Live With Shapes How You Scale</h3><p>Progress is rarely derailed by a single visible failure.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · GTM</div><h3>What Inaction Is Costing You: The Real Price of Waiting</h3><p>We overestimate risk of action and underestimate cost of inaction.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · Growth</div><h3>Growth Hiding in Plain Sight: Small Fixes That Compound</h3><p>Sustained, outsized growth rarely comes from isolated improvements.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · Leadership</div><h3>Driving Aware: Why Perspective Is a Leadership Skill</h3><p>Every lane is headed somewhere. But not every driver sees the full map.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · Growth</div><h3>Force Multipliers in Plain Sight</h3><p>Many companies chase growth by optimizing what they can easily see.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · GTM</div><h3>Ecosystem Positioning: Recruit Believers, Not Just Buyers</h3><p>The buyer isn't the only person who shapes the market.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · Culture</div><h3>The Third Place: What Coffee Shops Reveal About Connection</h3><p>Coffee shops tell a broader story about how people rebuild community.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · GTM</div><h3>Category Creation: The Good, The Bad &amp; What Really Drives It</h3><p>Some call it the path to outsized growth; others dismiss it as not worth the effort.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · Marketing</div><h3>Before You Pour Another Dollar Into Ads</h3><p>There's a moment every founder recognizes: staring at a dashboard flatline.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · Culture</div><h3>Loyalty in an Age of Empire Building</h3><p>AI and automation are concentrating scale, data and leverage at the organizational core.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · GTM</div><h3>Diagnose the GTM System, Not the Symptoms</h3><p>Most companies are chasing the next playbook. Far fewer examine the underlying systems.</p></div></div>
-        <div class="blog-card"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2020 · Growth</div><h3>Risks + Rewards of Vertical Expansion</h3><p>Red Ventures' acquisition of Lonely Planet and cNet put the spotlight on vertical expansion strategy.</p></div></div>
+
+      <!-- KEYWORD FILTER -->
+      <div id="blog-filters" style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem; align-items:center;">
+        <span style="font-size:0.75rem; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-right:0.5rem; width:100%; margin-bottom:0.25rem;">Filter by topic:</span>
+        <button class="filter-btn active" data-filter="all">All Posts</button>
+        <button class="filter-btn" data-filter="AI Strategy">AI Strategy</button>
+        <button class="filter-btn" data-filter="Agentic AI">Agentic AI</button>
+        <button class="filter-btn" data-filter="Category Creation">Category Creation</button>
+        <button class="filter-btn" data-filter="Channel Expansion">Channel Expansion</button>
+        <button class="filter-btn" data-filter="Content Engines">Content Engines</button>
+        <button class="filter-btn" data-filter="Customer Acquisition">Customer Acquisition</button>
+        <button class="filter-btn" data-filter="Data Intelligence">Data Intelligence</button>
+        <button class="filter-btn" data-filter="Future of Work">Future of Work</button>
+        <button class="filter-btn" data-filter="Go-to-Market Systems">Go-to-Market Systems</button>
+        <button class="filter-btn" data-filter="Growth Strategy">Growth Strategy</button>
+        <button class="filter-btn" data-filter="Healthtech">Healthtech</button>
+        <button class="filter-btn" data-filter="Journey Mapping">Journey Mapping</button>
+        <button class="filter-btn" data-filter="Leadership Strategy">Leadership Strategy</button>
+        <button class="filter-btn" data-filter="Market Transformation">Market Transformation</button>
+        <button class="filter-btn" data-filter="Marketing & Martech">Marketing & Martech</button>
+        <button class="filter-btn" data-filter="Narrative Design">Narrative Design</button>
+        <button class="filter-btn" data-filter="Operational Workflows">Operational Workflows</button>
+        <button class="filter-btn" data-filter="Product Launches">Product Launches</button>
+        <button class="filter-btn" data-filter="Revenue Operations">Revenue Operations</button>
+        <button class="filter-btn" data-filter="Sales Acceleration">Sales Acceleration</button>
+        <button class="filter-btn" data-filter="Team Building">Team Building</button>
+        <button class="filter-btn" data-filter="Tech Trends">Tech Trends</button>
       </div>
+
+      <div class="blog-grid" id="blog-grid">
+        <a class="blog-card" href="blog-what-ai-is-making-more-valuable.html" data-tags="AI Strategy" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · AI</div><h3>What AI Is Making More Valuable</h3><p>Headlines everywhere focus on what AI will replace.</p></div></a>
+        <a class="blog-card" href="blog-healthcare-authority-to-navigation.html" data-tags="Healthtech" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · Healthcare</div><h3>Healthcare Is Moving From Authority to Navigation</h3><p>The defining healthcare trend of the moment isn't AI.</p></div></a>
+        <a class="blog-card" href="blog-measurement-decision-infrastructure.html" data-tags="Operational Workflows" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · Operations</div><h3>When Measurement Becomes Decision Infrastructure</h3><p>Measurement used to be the finish line.</p></div></a>
+        <a class="blog-card" href="blog-organizational-cost-of-velocity.html" data-tags="Leadership Strategy" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · Leadership</div><h3>The Organizational Cost of Velocity</h3><p>In high-growth environments, velocity can outpace alignment.</p></div></a>
+        <a class="blog-card" href="blog-ai-strategy-leadership.html" data-tags="AI Strategy Leadership Strategy" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Jun 2026 · AI · Leadership</div><h3>What Your AI Strategy Says About Your Leadership</h3><p>How AI systems expose what leaders actually believe about their people.</p></div></a>
+        <a class="blog-card" href="blog-orchestration-layer-before-ai-agents.html" data-tags="AI Strategy" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · AI</div><h3>The Orchestration Layer That Comes Before AI Agents</h3><p>The foundational challenge many teams overlook.</p></div></a>
+        <a class="blog-card" href="blog-what-you-learn-to-live-with.html" data-tags="Growth Strategy" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · Growth</div><h3>What You Learn to Live With Shapes How You Scale</h3><p>Progress is rarely derailed by a single visible failure.</p></div></a>
+        <a class="blog-card" href="blog-what-inaction-is-costing-you.html" data-tags="Go-to-Market Systems" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · GTM</div><h3>What Inaction Is Costing You: The Real Price of Waiting</h3><p>We overestimate risk of action and underestimate cost of inaction.</p></div></a>
+        <a class="blog-card" href="blog-growth-hiding-in-plain-sight.html" data-tags="Growth Strategy" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · Growth</div><h3>Growth Hiding in Plain Sight: Small Fixes That Compound</h3><p>Sustained, outsized growth rarely comes from isolated improvements.</p></div></a>
+        <a class="blog-card" href="blog-driving-aware-perspective-leadership.html" data-tags="Leadership Strategy" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · Leadership</div><h3>Driving Aware: Why Perspective Is a Leadership Skill</h3><p>Every lane is headed somewhere. But not every driver sees the full map.</p></div></a>
+        <a class="blog-card" href="blog-force-multipliers-in-plain-sight.html" data-tags="Growth Strategy" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2025 · Growth</div><h3>Force Multipliers in Plain Sight</h3><p>Many companies chase growth by optimizing what they can easily see.</p></div></a>
+        <a class="blog-card" href="blog-ecosystem-positioning-believers.html" data-tags="Go-to-Market Systems" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · GTM</div><h3>Ecosystem Positioning: Recruit Believers, Not Just Buyers</h3><p>The buyer isn't the only person who shapes the market.</p></div></a>
+        <a class="blog-card" href="blog-third-place-coffee-shops.html" data-tags="Future of Work" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · Culture</div><h3>The Third Place: What Coffee Shops Reveal About Connection</h3><p>Coffee shops tell a broader story about how people rebuild community.</p></div></a>
+        <a class="blog-card" href="blog-category-creation.html" data-tags="Go-to-Market Systems" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · GTM</div><h3>Category Creation: The Good, The Bad &amp; What Really Drives It</h3><p>Some call it the path to outsized growth; others dismiss it as not worth the effort.</p></div></a>
+        <a class="blog-card" href="blog-before-you-pour-another-dollar-into-ads.html" data-tags="Marketing &amp; Martech" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · Marketing</div><h3>Before You Pour Another Dollar Into Ads</h3><p>There's a moment every founder recognizes: staring at a dashboard flatline.</p></div></a>
+        <a class="blog-card" href="blog-loyalty-empire-building.html" data-tags="Future of Work" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · Culture</div><h3>Loyalty in an Age of Empire Building</h3><p>AI and automation are concentrating scale, data and leverage at the organizational core.</p></div></a>
+        <a class="blog-card" href="blog-diagnose-gtm-system.html" data-tags="Go-to-Market Systems" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Nov 2025 · GTM</div><h3>Diagnose the GTM System, Not the Symptoms</h3><p>Most companies are chasing the next playbook. Far fewer examine the underlying systems.</p></div></a>
+        <a class="blog-card" href="blog-risks-rewards-vertical-expansion.html" data-tags="Growth Strategy" style="text-decoration:none;color:inherit;"><div class="blog-card-img"><span>✦</span></div><div class="blog-card-body"><div class="blog-card-date">Dec 2020 · Growth</div><h3>Risks + Rewards of Vertical Expansion</h3><p>Red Ventures' acquisition of Lonely Planet and cNet put the spotlight on vertical expansion strategy.</p></div></a>
+      </div>
+      <p id="blog-no-results" style="display:none; color:var(--muted); font-size:0.95rem; padding:2rem 0;">No posts found for this topic.</p>
+    </div>
+  </section>
+
+  <!-- MAILCHIMP SIGNUP -->
+  <section style="background: var(--navy); padding: 3.5rem 2.5rem;">
+    <div class="container" style="max-width: 560px; text-align: center;">
+      <div class="section-label" style="color: var(--teal); justify-content: center; display: flex;">Stay Sharp</div>
+      <h2 style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:300; font-size:1.75rem; color:var(--white); margin: 0.5rem 0 0.75rem;">New thinking, straight to your inbox</h2>
+      <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-bottom:2rem; line-height:1.6;">Strategy and growth insights for operators building in complex markets. No fluff.</p>
+      <form action="https://stratespheric.us17.list-manage.com/subscribe/post?u=325fb27343c39d2e9b929f23a&amp;id=5b4fc229ee&amp;f_id=00e2bde0f0" method="post" target="_blank" style="display:flex; gap:0.75rem; max-width:460px; margin:0 auto; flex-wrap:wrap;">
+        <input type="email" name="EMAIL" placeholder="Your email address" required
+          style="flex:1; min-width:200px; padding:0.8rem 1.1rem; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.08); color:var(--white); font-family:'Inter',sans-serif; font-size:0.9rem; outline:none;">
+        <!-- Mailchimp anti-bot field — do not remove -->
+        <div aria-hidden="true" style="position:absolute; left:-5000px;">
+          <input type="text" name="b_325fb27343c39d2e9b929f23a_5b4fc229ee" tabindex="-1" value="">
+        </div>
+        <button type="submit" class="btn-primary" style="white-space:nowrap;">Subscribe</button>
+      </form>
+      <p style="color:rgba(255,255,255,0.35); font-size:0.75rem; margin-top:1rem;">No spam. Unsubscribe anytime.</p>
     </div>
   </section>
 
@@ -909,6 +966,45 @@ function showPage(name) {
   document.getElementById('nav-' + name).classList.add('active');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
+
+// Blog keyword filter
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#blog-grid .blog-card');
+  const noResults = document.getElementById('blog-no-results');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const filter = this.dataset.filter;
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      let visible = 0;
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        if (filter === 'all' || tags.includes(filter)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+
+  // Restore filter state from blog post back-navigation
+  const savedPage = sessionStorage.getItem('page');
+  const savedFilter = sessionStorage.getItem('filter');
+  if (savedPage) {
+    showPage(savedPage);
+    sessionStorage.removeItem('page');
+  }
+  if (savedFilter) {
+    const matchBtn = document.querySelector(`.filter-btn[data-filter="${savedFilter}"]`);
+    if (matchBtn) matchBtn.click();
+    sessionStorage.removeItem('filter');
+  }
+});
 </script>
 
 </body>
