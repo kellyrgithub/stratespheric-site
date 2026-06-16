@@ -144,12 +144,12 @@
     position: absolute; inset: 0;
     background-image: url('Photo 3.png');
     background-size: cover; background-position: center;
-    opacity: 0.18;
+    opacity: 0.28;
   }
   .results-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
   .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
   @media (max-width: 860px) { .results-grid { grid-template-columns: 1fr; } }
-  .results-list { list-style: none; margin-top: 1.5rem; }
+  .results-list { list-style: none; margin-top: 0; }
   .results-list li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; color: rgba(255,255,255,0.82); line-height: 1.5; }
   .results-list li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
 
@@ -183,7 +183,7 @@
   /* CARDS */
   .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
   .card {
-    background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+    background: var(--teal-light); border: 1px solid rgba(91,195,227,0.3); border-radius: 12px;
     padding: 1.75rem; transition: all 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
   .card:hover { border-color: var(--teal); box-shadow: 0 8px 30px rgba(91,195,227,0.15); transform: translateY(-2px); }
@@ -407,7 +407,7 @@
 
   <div class="cta-banner">
     <h2 style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;">Ready to turn your growth blockers into breakthrough momentum?</h2>
-    <p>Schedule a free consultation — no pitch, just strategy.</p>
+    <p>Let's talk — no pitch, just strategy.</p>
     <button class="btn-primary" onclick="showPage('about'); setTimeout(()=>document.querySelector('#about-form').scrollIntoView({behavior:'smooth'}),120)">Schedule a Free Consultation</button>
   </div>
 
@@ -822,19 +822,15 @@
         </div>
         <div class="about-text">
           <h2 style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;">Revenue Leader. Global GM. Growth Architect.</h2>
-          <p>I'm Kelly Roark, a revenue leader and former global GM who helps organizations commercialize emerging technologies, build new markets and navigate complex growth transitions.</p>
-          <p>I've led growth at every stage — from ground-up ($0–$10M) to scaleup ($28–$40M) to enterprise expansion ($89–$120M) — contributing to $125M+ in digital innovation revenue inside public companies while landing new business with Fortune 500s including Pfizer, Merck, P&G and other regulated industry leaders.</p>
-          <p>Through Techstars, Cornell Tech, Colorado OEDIT and Innosphere Ventures, I've advised 500+ founders and innovation leaders, giving me pattern recognition across the commercial decisions that help companies scale — or stall.</p>
-          <p>My experience spans globally distributed teams, strategic partnerships and GM/BD roles across startup and enterprise contexts.</p>
-          <p>I founded Stratespheric to provide fractional CxO expertise that helps ambitious leaders and innovators navigate their high-stakes growth challenges — whether you're launching something new, breaking through plateaus, or transforming your commercial operations for accelerated scale.</p>
-          <p style="font-size: 0.88rem; color: var(--muted);">Featured speaking: AdWeek, iMedia and business conferences worldwide.</p>
+          <p style="font-size: 1rem; color: var(--muted); font-style: italic; margin-bottom: 1.25rem;">I build commercial systems that compound — inside enterprise and at the frontier of what's emerging.</p>
+          <p>My foundation is in revenue leadership and P&L ownership as a global GM — MailOnline, Scripps Networks, Trulia, Inman — across media, data platforms and marketplace models, from pre-revenue to nine figures.</p>
+          <p>Over the past decade I've stayed embedded in new business commercialization, expanding into the startup ecosystem through Stratespheric. I accelerate enterprise market entry and buying cycles for category-defining companies, and advise founders through Techstars, Innosphere Ventures and Cornell Tech.</p>
+          <p>Working across hundreds of companies at every growth stage has sharpened my pattern recognition around the commercial, organizational and market dynamics that determine whether ventures scale — or stall. I founded Stratespheric to put that experience to work for ambitious leaders navigating their highest-stakes growth moments.</p>
+          <p style="font-size: 0.88rem; color: var(--muted);">Featured: AdWeek, iMedia (US &amp; UK)</p>
           <div class="credentials">
-            <span class="credential">Techstars</span>
-            <span class="credential">Cornell Tech</span>
-            <span class="credential">Colorado OEDIT</span>
-            <span class="credential">Innosphere Ventures</span>
-            <span class="credential">AdWeek Speaker</span>
-            <span class="credential">Fortune 500 Clients</span>
+            <span class="credential">Category-Defining Businesses</span>
+            <span class="credential">Bold Founders</span>
+            <span class="credential">Fortune 500 Innovators</span>
           </div>
         </div>
       </div>
