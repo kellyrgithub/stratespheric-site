@@ -1006,6 +1006,14 @@
 </div>
 
 <script>
+  // Consult modal — global so onclick attributes can reach it
+  function openConsultModal(packageName, source) {
+    document.getElementById('consult-package').value = packageName;
+    document.getElementById('consult-source').value = source;
+    document.getElementById('consult-modal-title').textContent = 'Book a Free Consult — ' + packageName;
+    document.getElementById('consult-modal').style.display = 'flex';
+  }
+
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
@@ -1039,13 +1047,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Consult modal open/close
-  function openConsultModal(packageName, source) {
-    document.getElementById('consult-package').value = packageName;
-    document.getElementById('consult-source').value = source;
-    document.getElementById('consult-modal-title').textContent = 'Book a Free Consult — ' + packageName;
-    document.getElementById('consult-modal').style.display = 'flex';
-  }
+  // Consult modal close
   document.getElementById('consult-modal-close').addEventListener('click', function() {
     document.getElementById('consult-modal').style.display = 'none';
   });
