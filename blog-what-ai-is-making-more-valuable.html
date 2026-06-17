@@ -135,14 +135,9 @@
     font-style: italic; line-height: 1.7;
   }
 
-  /* PUNCHY LINES */
-  .post-body .punchy {
-    font-size: 1.05rem; color: var(--navy);
-    font-weight: 500; line-height: 1.9;
-    margin: 1.5rem 0; padding-left: 1.25rem;
-    border-left: 2px solid var(--teal);
-  }
-  .post-body .punchy span { display: block; }
+  /* STACKED SHORT LINES */
+  .post-body .line { margin-bottom: 0.3rem; }
+  .post-body .line-group { margin-bottom: 1.5rem; }
 
   /* BULLET LIST */
   .post-body ul {
@@ -241,21 +236,21 @@
 
 <!-- HERO IMAGE -->
 <div class="post-hero">
-  <img src="What%20AI%20Is%20Making%20More%20Valuable.jpg" alt="What AI Is Making More Valuable" />
+  <img src="blog-what-ai-is-making-more-valuable.jpg" alt="What AI Is Making More Valuable" />
 </div>
 
 <div class="post-wrapper">
 
-  <a class="back-link" href="index.html" onclick="sessionStorage.setItem('page','blog')">Back to Blog</a>
+  <a class="back-link" href="#" onclick="goToBlogFilter('all'); return false;">Back to Blog</a>
 
   <div class="post-meta">
     <span class="post-date">June 16, 2026</span>
     <div class="post-tags">
-      <a class="post-tag" href="index.html" onclick="sessionStorage.setItem('page','blog'); sessionStorage.setItem('filter','AI Strategy')">AI Strategy</a>
-      <a class="post-tag" href="index.html" onclick="sessionStorage.setItem('page','blog'); sessionStorage.setItem('filter','Category Creation')">Category Creation</a>
-      <a class="post-tag" href="index.html" onclick="sessionStorage.setItem('page','blog'); sessionStorage.setItem('filter','Content Engines')">Content Engines</a>
-      <a class="post-tag" href="index.html" onclick="sessionStorage.setItem('page','blog'); sessionStorage.setItem('filter','Narrative Design')">Narrative Design</a>
-      <a class="post-tag" href="index.html" onclick="sessionStorage.setItem('page','blog'); sessionStorage.setItem('filter','Tech Trends')">Tech Trends</a>
+      <a class="post-tag" href="#" onclick="goToBlogFilter('AI Strategy'); return false;">AI Strategy</a>
+      <a class="post-tag" href="#" onclick="goToBlogFilter('Category Creation'); return false;">Category Creation</a>
+      <a class="post-tag" href="#" onclick="goToBlogFilter('Content Engines'); return false;">Content Engines</a>
+      <a class="post-tag" href="#" onclick="goToBlogFilter('Narrative Design'); return false;">Narrative Design</a>
+      <a class="post-tag" href="#" onclick="goToBlogFilter('Tech Trends'); return false;">Tech Trends</a>
     </div>
   </div>
 
@@ -267,49 +262,53 @@
 
     <p>At the <a href="https://summit.runwayml.com/" target="_blank" rel="noopener">2026 Runway AI Summit</a>, leaders across film, gaming, architecture, technology and marketing offered a sharper take on where AI is heading — through the lens of video.</p>
 
-    <p>One theme surfaced repeatedly: AI is increasing the value of two things that have always mattered: craft and narrative.</p>
+    <p>One theme surfaced repeatedly: AI is increasing the value of two things that have always mattered: <strong>craft and narrative.</strong></p>
 
     <h2>Craft Is Becoming the Differentiator</h2>
 
     <p>Across industries, AI is making execution faster, cheaper and more accessible. As that happens, the source of differentiation is fast shifting from execution toward judgment.</p>
 
     <ul>
-      <li><strong>Rob Wrubel from Silverside</strong> described how AI is reshaping marketing workflows at a structural level, collapsing the funnel from in-depth brand briefs and inferred audience work into dynamic, real-time interactions with continuous learning loops.</li>
-      <li><strong>Mihir Vaidya of Electronic Arts</strong> shared how gaming environments continue to be the proving ground for many AI applications, as games require AI systems to continuously react, adapt and behave appropriately in real time to close the gap between imagination and execution.</li>
+      <li><strong>Rob Wrubel</strong> from Silverside described how AI is reshaping marketing workflows at a structural level, collapsing the funnel from in-depth brand briefs and inferred audience work into dynamic, real-time interactions with continuous learning loops.</li>
+      <li><strong>Mihir Vaidya</strong> of Electronic Arts shared how gaming environments continue to be the proving ground for many AI applications, as games require AI systems to continuously react, adapt and behave appropriately in real time to close the gap between imagination and execution.</li>
     </ul>
 
-    <div class="punchy">
-      <span>The common thread? Acceleration.</span>
-      <span>When execution accelerates, craft becomes essential.</span>
-      <span>Taste. Judgment. Point of view.</span>
-      <span>The ability to make decisions about what should be created, not simply how to create it.</span>
+    <div class="line-group">
+      <p class="line">The common thread? <strong>Acceleration.</strong></p>
+      <p class="line">When execution accelerates, craft becomes essential.</p>
+      <p class="line">Taste.</p>
+      <p class="line">Judgment.</p>
+      <p class="line">Point of view.</p>
+      <p class="line">The ability to make decisions about what should be created, not simply how to create it.</p>
     </div>
 
     <p>AI is making human creativity even more valuable.</p>
 
     <h2>Narrative Turns Capability Into Adoption</h2>
 
-    <p>Kathleen Kennedy reflected on her time at Lucasfilm and beyond, emphasizing something equally important from the world of filmmaking.</p>
+    <p><strong>Kathleen Kennedy</strong> reflected on her time at Lucasfilm and beyond, emphasizing something equally important from the world of filmmaking.</p>
 
-    <p>Technology exists to serve the story. The goal is to use technology and storytelling as tools for translating imagination into a strong, artistic point of view that others can understand and share. Through her own art form she reminds us that humans bring a depth of learned experience, unpredictability and unique taste that is tough to replicate. What excites her most about AI is its ability to expand what's technically possible and bring creators closer to real-time creative flow.</p>
+    <p><strong>Technology exists to serve the story.</strong> The goal is to use technology and storytelling as tools for translating imagination into a strong, artistic point of view that others can understand and share.</p>
 
-    <blockquote>"Narrative is how humans program intent." — Richard Kerris, NVIDIA</blockquote>
+    <p>Through her own art form she reminds us that humans bring a depth of learned experience, unpredictability and unique taste that is tough to replicate. What excites her most about AI is its ability to expand what's technically possible and bring creators closer to real-time creative flow.</p>
 
-    <div class="punchy">
-      <span>Narrative is what transforms capability into belief.</span>
-      <span>It's how products are understood.</span>
-      <span>It's how markets are created.</span>
-      <span>It's how organizations align around a vision.</span>
-      <span>And ultimately, it's how innovation gets adopted.</span>
+    <p><strong>Richard Kerris</strong> of NVIDIA offered his own take from the technologist's perspective: "Narrative is how humans program intent."</p>
+
+    <div class="line-group">
+      <p class="line">Narrative is what transforms capability into belief.</p>
+      <p class="line">It's how products are understood.</p>
+      <p class="line">It's how markets are created.</p>
+      <p class="line">It's how organizations align around a vision.</p>
+      <p class="line">And ultimately, it's how innovation gets adopted.</p>
     </div>
 
     <h2>The Real Gap Isn't AI Capability</h2>
 
     <p>Many organizations continue to focus on what AI is not yet capable of. The more important question is how to best translate technical capability into organizational and individual value.</p>
 
-    <div class="punchy">
-      <span>How do you translate outputs into outcomes?</span>
-      <span>How do you translate innovation into adoption?</span>
+    <div class="line-group">
+      <p class="line">How do you translate outputs into outcomes?</p>
+      <p class="line">How do you translate innovation into adoption?</p>
     </div>
 
     <p>The organizations that learn to connect capability, craft and narrative will create disproportionate value.</p>
@@ -318,11 +317,11 @@
 
     <p>Zooming out, that may be the most important takeaway.</p>
 
-    <div class="punchy">
-      <span>AI is changing how things are made — not what makes them meaningful.</span>
-      <span>Execution is becoming more abundant.</span>
-      <span>Craft remains scarce.</span>
-      <span>Narrative remains essential.</span>
+    <div class="line-group">
+      <p class="line">AI is changing how things are made — not what makes them meaningful.</p>
+      <p class="line">Execution is becoming more abundant.</p>
+      <p class="line">Craft remains scarce.</p>
+      <p class="line">Narrative remains essential.</p>
     </div>
 
     <div class="takeaways-box">
@@ -367,6 +366,18 @@
 <footer>
   <p>© 2026 Stratespheric · <a href="index.html">stratespheric.com</a></p>
 </footer>
+
+<script>
+  function goToBlogFilter(filter) {
+    sessionStorage.setItem('page', 'blog');
+    if (filter && filter !== 'all') {
+      sessionStorage.setItem('filter', filter);
+    } else {
+      sessionStorage.removeItem('filter');
+    }
+    window.location.href = 'index.html';
+  }
+</script>
 
 </body>
 </html>
