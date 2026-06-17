@@ -460,7 +460,7 @@
             <li>Pre-empt channel conflict + cannibalization before they derail momentum</li>
           </ul>
           <div class="result-box">Result: A launch plan and commercial model built for traction, adoption and smooth scale.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=Launch%20Blueprint%20for%20Breakout%20Products">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('Launch Blueprint for Breakout Products', 'Enterprise')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -480,7 +480,7 @@
             <li>Build internal comms plans to align and activate cross-functional teams</li>
           </ul>
           <div class="result-box">Result: An accelerated integration plan that turns your growth unit into a force multiplier — strengthening adoption and the entire business.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=New%20Product%20Integrations">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('New Product Integrations Into Core Business', 'Enterprise')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -499,7 +499,7 @@
             <li>Define success metrics + dashboard to track lift and inform iterations</li>
           </ul>
           <div class="result-box">Result: Unlock net-new revenue streams that drive growth and help you exceed your plan.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=Revenue%20Expansion%20Blueprint">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('Revenue Expansion Blueprint', 'Enterprise')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -518,7 +518,7 @@
             <li>Prioritize quick wins + strategic moves for maximum impact</li>
           </ul>
           <div class="result-box">Result: A prioritized growth roadmap you can execute now — reigniting your teams and putting them back on a trajectory that matches your ambitions.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=Revenue%20Plateau%20Breakthrough">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('Revenue Plateau Breakthrough', 'Enterprise')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -538,7 +538,7 @@
             <li>Recommend phased rollout improvements with measurable impact</li>
           </ul>
           <div class="result-box">Result: A clear, actionable plan that drives adoption, unlocks ROI, and turns your AI investment into a sustained competitive advantage.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=AI-Enabled%20Change%20Management">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('AI-Enabled Change Management', 'Enterprise')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -559,7 +559,7 @@
             <li>Momentum Check-In – Short engagement to recalibrate stalled initiatives and restart growth</li>
           </ul>
           <div class="result-box">Result: Fast, focused outputs that deliver insight, alignment and actionable next steps on your top value drivers.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=Enterprise%20Strategic%20Sprint">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('Enterprise Strategic Sprints', 'Enterprise')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -627,7 +627,7 @@
             <li>Build credibility systems that accelerate trust and adoption</li>
           </ul>
           <div class="result-box">Result: A market position and message that commands attention and sets you apart.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=Market%20Maker%20Map">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('Market Maker Map', 'Startup')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -647,7 +647,7 @@
             <li>Guide your team through integration so execution stays on track</li>
           </ul>
           <div class="result-box">Result: A clear GTM engine — from channel sequencing to rev ops — that makes scaling feel doable, not chaotic.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=Growth%20Engine%20Blueprint">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('Growth Engine Blueprint', 'Startup')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -666,7 +666,7 @@
             <li>Support your leadership shift, from doing it all to leading through others</li>
           </ul>
           <div class="result-box">Result: Confidence that your company can grow — without diluting your vision, sacrificing quality, or losing control of what matters most.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=Beyond%200%20to%201%2010x">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('Beyond 0 to 1 → 10x', 'Startup')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -686,7 +686,7 @@
             <li>Investor + board prep when the stakes are highest</li>
           </ul>
           <div class="result-box">Result: A fractional CGO-level partner who helps you navigate complexity and accelerate execution.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=Strategic%20Wingman">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('Strategic Wingman', 'Startup')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -706,7 +706,7 @@
             <li>New Channel Launch – Plan + execute entry into new markets or segments</li>
           </ul>
           <div class="result-box">Result: Quick-hit outputs that deliver clarity, alignment, and action on your most urgent growth levers — fast.</div>
-          <a class="btn-book" href="mailto:kelly@stratespheric.io?subject=Tactical%20Boosters">Book a Free Consult</a>
+          <button class="btn-book" onclick="openConsultModal('Tactical Boosters', 'Startup')">Book a Free Consult</button>
         </div>
       </div>
 
@@ -803,8 +803,23 @@
   <div class="cta-banner">
     <h2 style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;">Ready to write your own success story?</h2>
     <p>Schedule a free consultation and let's talk about your growth goals.</p>
-    <button class="btn-primary" onclick="showPage('about'); setTimeout(()=>document.querySelector('#about-form').scrollIntoView({behavior:'smooth'}),120)">Schedule a Free Consultation</button>
+    <button class="btn-primary" onclick="document.getElementById('testimonials-contact').scrollIntoView({behavior:'smooth'})">Schedule a Free Consultation</button>
   </div>
+
+  <section id="testimonials-contact">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;">Let's talk about your growth goals</h2>
+      <form class="contact-form" style="text-align: left;" name="testimonials-contact" netlify data-netlify="true">
+        <input type="hidden" name="form-name" value="testimonials-contact" />
+        <div class="form-row">
+          <div class="form-field"><label>Name</label><input type="text" name="name" placeholder="Your name" /></div>
+          <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="you@company.com" /></div>
+        </div>
+        <div class="form-field"><label>Message</label><textarea name="message" placeholder="Tell us what you're working on..."></textarea></div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+      </form>
+    </div>
+  </section>
 
   <footer>
     <p>Copyright © 2026 Stratespheric — All Rights Reserved &nbsp;·&nbsp; <a href="https://www.linkedin.com/company/stratespheric" target="_blank">LinkedIn</a></p>
@@ -961,6 +976,25 @@
   </footer>
 </div>
 
+<!-- Book a Consult Modal -->
+<div id="consult-modal" style="display:none; position:fixed; inset:0; background:rgba(13,31,45,0.6); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:16px; padding:2.5rem 2rem; max-width:480px; width:90%; box-shadow:0 20px 60px rgba(0,0,0,0.2); position:relative;">
+    <button id="consult-modal-close" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.25rem;cursor:pointer;color:#64748b;">✕</button>
+    <h3 id="consult-modal-title" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;font-size:1.3rem;color:#0d1f2d;margin:0 0 1.5rem;">Book a Free Consult</h3>
+    <form name="book-consult" netlify data-netlify="true" style="text-align:left;">
+      <input type="hidden" name="form-name" value="book-consult" />
+      <input type="hidden" name="source" id="consult-source" value="" />
+      <input type="hidden" name="package" id="consult-package" value="" />
+      <div class="form-row">
+        <div class="form-field"><label>Name</label><input type="text" name="name" placeholder="Your name" /></div>
+        <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="you@company.com" /></div>
+      </div>
+      <div class="form-field"><label>Tell us about your challenge</label><textarea name="message" placeholder="What are you working on?"></textarea></div>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Message</button>
+    </form>
+  </div>
+</div>
+
 <!-- Form Success Popup -->
 <div id="form-success-popup" style="display:none; position:fixed; inset:0; background:rgba(13,31,45,0.6); z-index:9999; align-items:center; justify-content:center;">
   <div style="background:#fff; border-radius:16px; padding:2.5rem 2rem; max-width:400px; width:90%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.2);">
@@ -1003,6 +1037,20 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       noResults.style.display = visible === 0 ? 'block' : 'none';
     });
+  });
+
+  // Consult modal open/close
+  function openConsultModal(packageName, source) {
+    document.getElementById('consult-package').value = packageName;
+    document.getElementById('consult-source').value = source;
+    document.getElementById('consult-modal-title').textContent = 'Book a Free Consult — ' + packageName;
+    document.getElementById('consult-modal').style.display = 'flex';
+  }
+  document.getElementById('consult-modal-close').addEventListener('click', function() {
+    document.getElementById('consult-modal').style.display = 'none';
+  });
+  document.getElementById('consult-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
   });
 
   // Netlify Forms — intercept submit, post via fetch, show success popup
