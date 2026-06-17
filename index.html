@@ -976,15 +976,28 @@
   </footer>
 </div>
 
+<!-- Hidden Netlify forms for per-package tracking (detected at deploy time) -->
+<div style="display:none">
+  <form name="launch-blueprint" netlify data-netlify="true"><input type="hidden" name="form-name" value="launch-blueprint" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="new-product-integrations" netlify data-netlify="true"><input type="hidden" name="form-name" value="new-product-integrations" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="revenue-expansion-blueprint" netlify data-netlify="true"><input type="hidden" name="form-name" value="revenue-expansion-blueprint" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="revenue-plateau-breakthrough" netlify data-netlify="true"><input type="hidden" name="form-name" value="revenue-plateau-breakthrough" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="ai-enabled-change-management" netlify data-netlify="true"><input type="hidden" name="form-name" value="ai-enabled-change-management" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="enterprise-strategic-sprints" netlify data-netlify="true"><input type="hidden" name="form-name" value="enterprise-strategic-sprints" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="market-maker-map" netlify data-netlify="true"><input type="hidden" name="form-name" value="market-maker-map" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="growth-engine-blueprint" netlify data-netlify="true"><input type="hidden" name="form-name" value="growth-engine-blueprint" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="beyond-0-to-1" netlify data-netlify="true"><input type="hidden" name="form-name" value="beyond-0-to-1" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="strategic-wingman" netlify data-netlify="true"><input type="hidden" name="form-name" value="strategic-wingman" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+  <form name="tactical-boosters" netlify data-netlify="true"><input type="hidden" name="form-name" value="tactical-boosters" /><input name="name" /><input name="email" /><textarea name="message"></textarea></form>
+</div>
+
 <!-- Book a Consult Modal -->
 <div id="consult-modal" style="display:none; position:fixed; inset:0; background:rgba(13,31,45,0.6); z-index:9999; align-items:center; justify-content:center;">
   <div style="background:#fff; border-radius:16px; padding:2.5rem 2rem; max-width:480px; width:90%; box-shadow:0 20px 60px rgba(0,0,0,0.2); position:relative;">
     <button id="consult-modal-close" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.25rem;cursor:pointer;color:#64748b;">✕</button>
     <h3 id="consult-modal-title" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;font-size:1.3rem;color:#0d1f2d;margin:0 0 1.5rem;">Book a Free Consult</h3>
-    <form name="book-consult" netlify data-netlify="true" style="text-align:left;">
-      <input type="hidden" name="form-name" value="book-consult" />
-      <input type="hidden" name="source" id="consult-source" value="" />
-      <input type="hidden" name="package" id="consult-package" value="" />
+    <form id="consult-modal-form" style="text-align:left;">
+      <input type="hidden" id="consult-package" value="" />
       <div class="form-row">
         <div class="form-field"><label>Name</label><input type="text" name="name" placeholder="Your name" /></div>
         <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="you@company.com" /></div>
@@ -1045,6 +1058,38 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       noResults.style.display = visible === 0 ? 'block' : 'none';
     });
+  });
+
+  // Consult modal — per-package form routing
+  const packageFormMap = {
+    'Launch Blueprint for Breakout Products': 'launch-blueprint',
+    'New Product Integrations Into Core Business': 'new-product-integrations',
+    'Revenue Expansion Blueprint': 'revenue-expansion-blueprint',
+    'Revenue Plateau Breakthrough': 'revenue-plateau-breakthrough',
+    'AI-Enabled Change Management': 'ai-enabled-change-management',
+    'Enterprise Strategic Sprints': 'enterprise-strategic-sprints',
+    'Market Maker Map': 'market-maker-map',
+    'Growth Engine Blueprint': 'growth-engine-blueprint',
+    'Beyond 0 to 1 → 10x': 'beyond-0-to-1',
+    'Strategic Wingman': 'strategic-wingman',
+    'Tactical Boosters': 'tactical-boosters'
+  };
+  document.getElementById('consult-modal-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const pkg = document.getElementById('consult-package').value;
+    const formName = packageFormMap[pkg] || 'launch-blueprint';
+    const data = new URLSearchParams({
+      'form-name': formName,
+      'name': this.querySelector('[name="name"]').value,
+      'email': this.querySelector('[name="email"]').value,
+      'message': this.querySelector('[name="message"]').value
+    });
+    try {
+      await fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: data.toString() });
+    } catch(err) {}
+    this.reset();
+    document.getElementById('consult-modal').style.display = 'none';
+    document.getElementById('form-success-popup').style.display = 'flex';
   });
 
   // Consult modal close
