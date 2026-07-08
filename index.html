@@ -141,10 +141,10 @@
   }
   .btn-book:hover { background: var(--teal); color: var(--navy); }
   .cta-secondary-box {
-    margin-top: 1rem; padding: 0.9rem 1rem; background: var(--white);
-    border: 1.5px solid var(--teal); border-radius: 10px; max-width: 340px;
+    display: block; width: fit-content; margin-top: 1rem; padding: 0.85rem 1.25rem; background: var(--white);
+    border: 1.5px solid var(--teal); border-radius: 10px; max-width: 340px; text-align: center;
   }
-  .cta-secondary-box p { margin: 0 0 0.65rem; font-size: 0.8rem; font-weight: 600; color: var(--navy); }
+  div.cta-secondary-box p { margin: 0 0 0.6rem; font-size: 0.8rem; font-weight: 600; color: var(--navy); }
   .btn-cta-outline {
     display: inline-flex; align-items: center; gap: 0.4rem;
     background: transparent; color: var(--teal-dark); font-weight: 700; font-size: 0.78rem;
@@ -152,6 +152,8 @@
     border: 1.5px solid var(--teal); transition: all 0.2s;
   }
   .btn-cta-outline:hover { background: var(--teal-light); }
+  .cta-stack { display: inline-grid; }
+  .cta-stack > * { width: 100%; }
 
   /* STATS BAR */
   .stats-bar {
@@ -463,10 +465,12 @@
   <div class="cta-banner">
     <h2 style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;">Ready to turn your growth blockers into breakthrough momentum?</h2>
     <p>Let's talk — no pitch, just strategy.</p>
-    <button class="btn-primary" onclick="showPage('about'); setTimeout(()=>document.querySelector('#about-form').scrollIntoView({behavior:'smooth'}),120)">Schedule a Free Consultation</button>
-    <div class="cta-secondary-box" style="margin: 1.5rem auto 0;">
-      <p>Not ready to talk yet?</p>
-      <a class="btn-cta-outline" href="https://engine.stratespheric.com" target="_blank" rel="noopener">Try the free Positioning Engine <span aria-hidden="true">→</span></a>
+    <div class="cta-stack">
+      <button class="btn-primary" onclick="showPage('about'); setTimeout(()=>document.querySelector('#about-form').scrollIntoView({behavior:'smooth'}),120)">Schedule a Free Consultation</button>
+      <div class="cta-secondary-box" style="margin: 0.5rem auto 0;">
+        <p>Not ready to talk yet?</p>
+        <a class="btn-cta-outline" href="https://engine.stratespheric.com" target="_blank" rel="noopener">Try the free Positioning Engine <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </div>
 
