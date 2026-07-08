@@ -140,6 +140,13 @@
     transition: all 0.2s; letter-spacing: 0.01em;
   }
   .btn-book:hover { background: var(--teal); color: var(--navy); }
+  .tool-link {
+    display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem;
+    background: var(--teal-light); color: var(--teal-dark); font-weight: 600; font-size: 0.82rem;
+    padding: 0.5rem 1.1rem; border-radius: 100px; text-decoration: none;
+    border: 1px solid rgba(91,195,227,0.4); transition: all 0.2s;
+  }
+  .tool-link:hover { background: var(--teal); color: var(--navy); border-color: var(--teal); }
 
   /* STATS BAR */
   .stats-bar {
@@ -663,6 +670,8 @@
           </ul>
           <div class="result-box">Result: A market position and message that commands attention and sets you apart.</div>
           <button class="btn-book" onclick="openConsultModal('Market Maker Map', 'Startup')">Book a Free Consult</button>
+          <br/>
+          <a class="tool-link" href="https://engine.stratespheric.com" target="_blank" rel="noopener">Not ready to talk yet? Try the free Positioning Engine <span aria-hidden="true">→</span></a>
         </div>
       </div>
 

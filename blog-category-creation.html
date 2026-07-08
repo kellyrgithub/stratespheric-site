@@ -148,6 +148,10 @@
     border-radius: 8px; text-decoration: none; transition: all 0.2s;
   }
   .btn-primary:hover { background: #7dd3ed; transform: translateY(-1px); }
+  .post-cta-secondary { margin-top: 1rem; padding: 1.5rem 2.5rem; background: var(--white); border: 1.5px solid var(--teal); border-radius: 16px; text-align: center; }
+  .post-cta-secondary p { color: var(--slate); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+  .btn-outline-teal { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--teal-dark); font-weight: 700; font-size: 0.85rem; padding: 0.65rem 1.5rem; border-radius: 8px; text-decoration: none; border: 1.5px solid var(--teal); transition: all 0.2s; }
+  .btn-outline-teal:hover { background: var(--teal-light); }
   footer { background: var(--navy); color: rgba(255,255,255,0.5); text-align: center; padding: 2rem; font-size: 0.8rem; }
   footer a { color: var(--teal); text-decoration: none; }
   .post-byline { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
@@ -285,9 +289,13 @@
   </div>
 
   <div class="post-cta">
-    <h3>Ready to put this into practice?</h3>
     <p>Let's talk about your specific growth challenge — no pitch, just strategy.</p>
     <a class="btn-primary" href="index.html" onclick="sessionStorage.setItem('page','about')">Schedule a Free Session</a>
+  </div>
+
+  <div class="post-cta-secondary">
+    <p>Not ready to talk yet?<br/>Get a free AI-generated read on your positioning in 5 minutes.</p>
+    <a class="btn-outline-teal" href="https://engine.stratespheric.com" target="_blank" rel="noopener">Try the free Positioning Engine <span aria-hidden="true">→</span></a>
   </div>
 
 </div>
